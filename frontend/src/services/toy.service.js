@@ -87,7 +87,8 @@ function _createToys() {
                 price: 123,
                 labels: ["Doll", "Battery Powered", "Baby"],
                 createdAt: 1631031801011,
-                inStock: true
+                inStock: true,
+                img: "talking-dall.jpg"
             },
             {
                 _id: utilService.makeId(4),
@@ -95,7 +96,8 @@ function _createToys() {
                 price: 25,
                 labels: ["Sensory toy", "Kids"],
                 createdAt: 1631031801811,
-                inStock: false
+                inStock: false,
+                img: "kinetic-sand.jpg"
             },
             {
                 _id: utilService.makeId(4),
@@ -103,7 +105,8 @@ function _createToys() {
                 price: 15,
                 labels: ["Metal", "Party", "Kids"],
                 createdAt: 1631031801011,
-                inStock: true
+                inStock: true,
+                img: "slinky.jpg"
             },
             {
                 _id: utilService.makeId(4),
@@ -111,7 +114,8 @@ function _createToys() {
                 price: 100,
                 labels: ["Kids", "Battery Powered"],
                 createdAt: 1631031801011,
-                inStock: true
+                inStock: true,
+                img: "marvel-spider.jpg"
             },
             {
                 _id: utilService.makeId(4),
@@ -119,7 +123,8 @@ function _createToys() {
                 price: 43,
                 labels: ["Ball", "Kids", "Beach Toys"],
                 createdAt: 1631031801011,
-                inStock: true
+                inStock: true,
+                img: "toss-catch.jpg"
             },
             {
                 _id: utilService.makeId(4),
@@ -127,7 +132,8 @@ function _createToys() {
                 price: 13,
                 labels: ["Puzzle", "Kids"],
                 createdAt: 1634331801011,
-                inStock: false
+                inStock: false,
+                img: "puzzle.jpg"
 
             },
         ];

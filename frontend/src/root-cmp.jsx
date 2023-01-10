@@ -7,6 +7,7 @@ import { AboutUs } from "./pages/about-us";
 import { HomePage } from "./pages/home-page";
 import { ToyIndex } from "./pages/toy-index";
 import { UserMsg } from "./cmps/user-msg";
+import { ToyDetails } from "./pages/toy-details";
 
 export function App() {
 
@@ -21,7 +22,7 @@ export function App() {
                                 <Route element={<HomePage />} path="/" />
                                 <Route element={<AboutUs />} path="/about" />
                                 <Route element={<ToyIndex />} path="/toy" />
-
+                                <Route element={<ToyDetails />} path="/toy/:toyId" />
                             </Routes>
                         </main>
                         <UserMsg />

@@ -10,7 +10,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 export function ToyIndex() {
 
   const toys = useSelector((storeState) => storeState.toyModule.toys)
-
+  
   useEffect(() => {
     onLoadToys()
 }, [])
