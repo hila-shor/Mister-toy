@@ -1,0 +1,9 @@
+.filter-container{
+  // background-color: lightness(#77b3a4) ;
+  background-color:$clr-6 ;
+  padding: 10px;
+
+  form > :not(:first-child){
+    margin-inline: 0.5rem;
+  }
+}

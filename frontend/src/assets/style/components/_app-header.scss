@@ -1,0 +1,32 @@
+.app-header {
+  background-color: $clr-1;
+  
+  .header-wrapper{
+      align-items: center;
+
+    .img {
+      max-width:800px;
+    }
+    a {
+      color:$clr1 ;
+      font-size: larger;
+      margin-inline: 3px;
+      
+      &:hover{
+        color:$clr4;
+      }
+    }
+    .login-signup{
+      margin-inline-start: 1.3rem;
+      background-color: $clr1;
+      color:$clr2;
+      border-radius: 12px;
+      padding: 0.5rem;
+    }
+    nav{
+      color:$clr4;
+      margin-inline-start: 20px;
+    }
+  }
+
+}

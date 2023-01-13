@@ -27,14 +27,16 @@ function loadToy() {
 
 if (!toy) return <div>Loading...</div>
   return (
-    <section className="toy-details">
-      <h1>details</h1>
-      <h5>{toy.name}</h5>
-              <h5>$ {toy.price}</h5>
-              <img alt='' src={require(`../assets/img/${toy.img}`)}/>
-              <h2>Type: <span>{toy.labels}</span></h2>
-            <h2>Created at: <span>{utilService.timestampToDate (toy.createdAt)}</span></h2>
-            <h2>In Stock: <span>{(toy.inStock) ? 'yes' : 'no'}</span></h2>
+    <section className="toy-details main-layout">
+      <h2>{toy.name}</h2>
+              <h2>$ {toy.price}</h2>
+              <div className="img-wrapper">
+                <img src={`https://robohash.org/${toy.name}?set=set1`} alt="" />
+              </div>
+              {/* <img alt='' src={require(`../assets/img/${toy.img}`)}/> */}
+              <h4>Type: <span>{toy.labels}</span></h4>
+            <h4>Created at: <span>{utilService.timestampToDate (toy.createdAt)}</span></h4>
+            <h4>In Stock: <span>{(toy.inStock) ? 'yes' : 'no'}</span></h4>
     </section>
   )
 

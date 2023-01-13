@@ -1,63 +1,63 @@
+import React from 'react'
 
-import { useEffect, useRef, useState } from "react"
-import { toyService } from "../services/toy.service.js"
-import { utilService } from "../services/util.service.js"
+export function ToyFilter({ handleChange, filterBy }) {
+    
 
+  
+// const CustomTextField = (props) => {
+//   return <TextField id="outlined-basic" label="Outlined" variant="outlined" {...props}  />
 
-export function ToyFilter({ onSetFilter }) {
-
-    const [filterByToEdit, setFilterByToEdit] = useState(toyService.getDefaultFilter())
-
-    onSetFilter = useRef(utilService.debounce(onSetFilter))
-
-    const elInputRef = useRef(null)
-
-    useEffect(() => {
-        elInputRef.current.focus()
-    }, [])
-
-    useEffect(() => {
-        // update father cmp that filters change very type
-        onSetFilter.current(filterByToEdit)
-    }, [filterByToEdit])
-
-    function handleChange({ target }) {
-        let { value, name: field, type } = target
-        value = (type === 'number') ? +value : value
-        setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
-    }
-
-    function onSubmitFilter(ev) {
-        // update father cmp that filters change on submit
-        ev.preventDefault()
-        onSetFilter(filterByToEdit)
-    }
-
-
-    return <section className="toy-filter full main-layout">
-        <h2>Toys Filter</h2>
-        <form onSubmit={onSubmitFilter}>
-            <label htmlFor="name">Toy name:</label>
-            <input type="text"
-                id="name"
-                name="txt"
-                placeholder="By name"
-                value={filterByToEdit.txt}
-                onChange={handleChange}
-                ref={elInputRef}
-            />
-
-            <label htmlFor="maxPrice">Max price:</label>
-            <input type="number"
-                id="maxPrice"
-                name="maxPrice"
-                placeholder="By max price"
-                value={filterByToEdit.maxPrice}
-                onChange={handleChange}
-            />
-
-            <button hidden>Filter</button>
+// }
+    return <div className="filter-container main-layout full">
+        <form className={'form-filter'}>
+            <label className='filter-label'>
+                <span className='filter-label'>Search</span>
+                <input
+                    value={filterBy.search}
+                    onChange={handleChange}
+                    type="search"
+                    className="search-input"
+                    name="search" />
+            </label>
+            <label className='filter-label'>
+                <span className='filter-label'>Filter By</span>
+                <select
+                    onChange={handleChange}
+                    name="type"
+                    value={filterBy.type}>
+                    <option value="All"> None </option>
+                    <option value="Kids">Kids</option>
+                    <option value="Ball">Ball</option>
+                    <option value="Party">Party</option>
+                </select>
+            </label>
+            <label className='filter-label'>
+                <span className='filter-label'>In stock</span>
+                <input
+                    type="checkbox"
+                    onChange={handleChange}
+                    name="inStock"
+                    className="check-box"
+                />
+            </label>
+            <label className='filter-label'>
+                <span className='filter-label'>Min-price</span>
+                <input
+                    onChange={handleChange}
+                    type="number"
+                    className="min-price"
+                    name="minPrice" />
+            </label>
+            <label className='filter-label'>
+                <span className='filter-label'>Max-price</span>
+                <input
+                    onChange={handleChange}
+                    type="number"
+                    className="max-price"
+                    name="maxPrice" />
+            </label>
+          
         </form>
-
-    </section>
+    </div>
 }
+

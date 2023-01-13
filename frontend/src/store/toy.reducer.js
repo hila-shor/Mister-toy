@@ -15,7 +15,7 @@ export const SET_IS_LOADING = 'SET_IS_LOADING'
 
 const initialState = {
     toys: [],
-    lastRemovedCar: null,
+    lastRemovedToy: null,
     isLoading: false,
     // isCartShown: false,
     // shoppingCart: [],

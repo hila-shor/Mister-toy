@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family:   architects-daughter-regular;
+    line-height: 1.75;
+    color: $clr-1;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    // width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    margin: 2rem 0 2rem;
+}
+
+h1{
+    font-family: architects-daughter-regular, serif;
+    color: darken($clr13,5%) ;
+}
+
+a{
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+// p {
+//     margin: 0 0 2rem;
+//     max-width: 46ch;
+// }

@@ -1,17 +1,22 @@
 import { PopupMenu } from "../cmps/popup-menu";
+import React from "react";
+import GoogleMapReact from 'google-map-react';
+import { GoogleMap } from "../cmps/google.map";
+
+
 
 export function AboutUs() {
+
     return (
     <>
-        <section>
+        <section className="main-layout">
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam quo veniam velit dolor reprehenderit, laudantium consequatur neque numquam labore quae. Accusamus libero perferendis ducimus? Alias unde hic quisquam doloremque.</p>
+        </section >
+         
+        <section className="google-container main-layout">
+            <GoogleMap/>
         </section>
-            <PopupMenu top={<h2>Popup in ABout</h2>}>
-                <span>Lorem ipsum dolor sit amet.</span>
-                <span>Lorem ipsum dolor sit amet.</span>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </PopupMenu>
     </>
     )
 

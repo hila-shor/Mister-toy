@@ -1,0 +1,38 @@
+// Colors
+$clr11: #ce2e6c;
+$clr12: #092F32;
+$clr13: #574f7d;
+$clr14: #95adbe;
+$clr15: #88d9ffbf;
+$clr16: #fff;
+
+// // Breakpoints
+// $mobile-breakpoint: 460px;
+// $narrow-breakpoint: 720px;
+// $normal-breakpoint: 960px;
+
+
+
+// COLOR PALETTE
+$clr-1: #062f67;
+$clr1: #ffda81;
+$clr2: #ca4e4e;
+$clr3: #77b3a4;
+$clr4:#cb80ff ;
+$clr5: #fff;
+$clr6: rgba($clr1, .2);
+$clr-6: rgba($clr2, .2);
+$clr7:lightness(#77b3a4);
+
+
+// LAYOUT
+$layoutPadding: 16px;
+
+// LAYOUT BREAKPOINTS
+$break-narrow: 600px;
+$break-normal: 960px;
+$break-wide: 1300px;
+
+$padded-break-narrow: $break-narrow + $layoutPadding * 2;
+$padded-break-normal: $break-normal + $layoutPadding * 2;
+$padded-break-wide: $break-wide + $layoutPadding * 2;

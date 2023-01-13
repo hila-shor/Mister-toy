@@ -1,4 +1,4 @@
-
+import './assets/style/style.scss'
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './store/store';
@@ -8,13 +8,15 @@ import { HomePage } from "./pages/home-page";
 import { ToyIndex } from "./pages/toy-index";
 import { UserMsg } from "./cmps/user-msg";
 import { ToyDetails } from "./pages/toy-details";
+import { Dashboard } from "./pages/dashboard";
+import { LoginSignup } from './pages/login-signup';
 
 export function App() {
 
     return (
         <Provider store={store}>
             <Router>
-                <section className="main-layout app">
+                <section >
                     
                     <AppHeader />
                     <main>
@@ -23,6 +25,8 @@ export function App() {
                                 <Route element={<AboutUs />} path="/about" />
                                 <Route element={<ToyIndex />} path="/toy" />
                                 <Route element={<ToyDetails />} path="/toy/:toyId" />
+                                <Route element={<Dashboard />} path="/dashboard"/>
+                                <Route element={<LoginSignup/>} path="/login-signup"/>
                             </Routes>
                         </main>
                         <UserMsg />
@@ -30,4 +34,4 @@ export function App() {
             </Router>
         </Provider>
     )
-}
+}                           

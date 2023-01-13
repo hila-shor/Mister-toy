@@ -1,6 +1,5 @@
 
 import { useState , useEffect , useRef } from 'react'
-
 import { eventBusService } from "../services/event-bus.service.js"
 
 export function UserMsg(){
@@ -16,7 +15,7 @@ export function UserMsg(){
         clearTimeout(timeoutIdRef.current)
         timeoutIdRef.current = null
       }
-      timeoutIdRef.current = setTimeout(onCloseMsg,1000)
+      timeoutIdRef.current = setTimeout(onCloseMsg,5000)
     })
     return unsubscribe
   }, [])
@@ -24,11 +23,13 @@ export function UserMsg(){
   
   function onCloseMsg() {
     setMsg(null)
+   
+
   }
 if(!msg ) return <span></span>
   return <div className={"user-msg "}>
             {msg.txt}
             <button className="close-msg-btn" onClick={onCloseMsg}>x</button> 
-            if 
+            
         </div>
 }
