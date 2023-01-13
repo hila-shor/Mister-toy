@@ -91,12 +91,12 @@ export function LoginSignup(){
             />}
 
             <button>{isSignupState ? 'Signup' : 'Login'}</button>
-            <div className="btns">
+            
             <a href="#" onClick={onToggleSignupState}>
                 {isSignupState ? 'Already a member? Login' : 'New user? Signup here'}
             </a >
-            {/* <button onClick={onLogout}>Logout</button> */}
-        </div>
+            
+        
         </form>
         
       
