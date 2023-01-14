@@ -24,7 +24,7 @@ export function AppHeader() {
                     <NavLink to="/about">About</NavLink> |
                     <NavLink to="/toy">Toys</NavLink> |
                     <NavLink to="/dashboard">Dashboard</NavLink> 
-                    {!user && <NavLink className="login-signup" to="/login-signup">Login / Singup</NavLink>}
+                    {!user && <NavLink className="login-signup" to="/login-signup">Login / Signup</NavLink>}
                     {user && <button onClick={onLogout}>hi {user.fullname}/Logout</button>}
                 </nav>
             </div>
