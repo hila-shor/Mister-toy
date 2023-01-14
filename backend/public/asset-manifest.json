@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36721b43.css",
+    "main.js": "/static/js/main.6e40ffdb.js",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Deadmobil-WLv4.ttf": "/static/media/Deadmobil-WLv4.86b9cdeabdffcc9908b6.ttf",
+    "static/media/logo-removebg-preview.png": "/static/media/logo-removebg-preview.0f3b82756ca452681b23.png",
+    "static/media/ArchitectsDaughter-Regular.ttf": "/static/media/ArchitectsDaughter-Regular.97e4b635030c7d8a85d5.ttf",
+    "static/media/Starborn.ttf": "/static/media/Starborn.921086e813b46abea23a.ttf",
+    "index.html": "/index.html",
+    "main.36721b43.css.map": "/static/css/main.36721b43.css.map",
+    "main.6e40ffdb.js.map": "/static/js/main.6e40ffdb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36721b43.css",
+    "static/js/main.6e40ffdb.js"
+  ]
+}
