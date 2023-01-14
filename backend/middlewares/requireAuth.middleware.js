@@ -3,9 +3,9 @@ const authService = require('../api/auth/auth.service')
 const config = require('../config')
 
 async function requireAuth(req, res, next) {
-  
+
   if (config.isGuestMode && !req?.cookies?.loginToken) {
-    req.loggedinUser = {_id: '', fullname: 'Guest'}
+    req.loggedinUser = { _id: '', fullname: 'Guest' }
     return next()
   }
 
@@ -27,9 +27,6 @@ async function requireAdmin(req, res, next) {
   }
   next()
 }
-
-
-// module.exports = requireAuth
 
 module.exports = {
   requireAuth,

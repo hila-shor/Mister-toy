@@ -26,11 +26,13 @@ if (process.env.NODE_ENV === 'production') {
 
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
+const toyRoutes = require('./api/toy/toy.routes')
 
 
 // routes
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/toy', toyRoutes)
 
 // Default route
 app.get('/**', (req, res) => {
