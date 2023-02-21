@@ -1,13 +1,7 @@
 import React from 'react'
 
-export function ToyFilter({ handleChange, filterBy }) {
+export function ToyFilter({ handleChange, filterBy, labels }) {
     
-
-  
-// const CustomTextField = (props) => {
-//   return <TextField id="outlined-basic" label="Outlined" variant="outlined" {...props}  />
-
-// }
     return <div className="filter-container main-layout full">
         <form className={'form-filter'}>
             <label className='filter-label'>
@@ -23,12 +17,14 @@ export function ToyFilter({ handleChange, filterBy }) {
                 <span className='filter-label'>Filter By</span>
                 <select
                     onChange={handleChange}
-                    name="type"
-                    value={filterBy.type}>
+                    name="labels"
+                    value={filterBy.labels}>
                     <option value="All"> None </option>
-                    <option value="Kids">Kids</option>
-                    <option value="Ball">Ball</option>
-                    <option value="Party">Party</option>
+                    {labels.map((label) => (
+                    <option key={label} value={label}>
+                        {label}
+                    </option>
+                    ))}
                 </select>
             </label>
             <label className='filter-label'>
@@ -56,7 +52,6 @@ export function ToyFilter({ handleChange, filterBy }) {
                     className="max-price"
                     name="maxPrice" />
             </label>
-          
         </form>
     </div>
 }

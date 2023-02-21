@@ -36,7 +36,7 @@ function getDefaultFilter() {
         search: '',
         maxPrice: Infinity,
         minPrice: -Infinity,
-        type: 'All',
+        labels: 'All',
         inStock: null
     }
 }

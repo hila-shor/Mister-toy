@@ -5,10 +5,9 @@ const logger = require('../../services/logger.service')
 async function getToys(req, res) {
   try {
     logger.debug('Getting Toys')
-    const filterBy = {
-      // txt: req.query.txt || ''
-    }
-    const toys = await toyService.query(filterBy)
+    // console.log(req.query)
+
+    const toys = await toyService.query(req.query)
     res.json(toys)
   } catch (err) {
     logger.error('Failed to get toys', err)

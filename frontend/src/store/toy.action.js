@@ -19,6 +19,18 @@ export function loadToys(filterBy) {
         })
 }
 
+export function loadToy(toyId) {
+    return toyService.getById(toyId)
+        .then(toy => {
+            store.dispatch({ type: UPDATE_TOY, toy })
+            return toy
+        })
+        .catch(err => {
+            console.error(`Cannot load toy ${toyId}:`, err)
+            throw err
+        })
+}
+
 // Example for Optimistic mutation:
 export function removeToy(toyId) {
     store.dispatch({ type: REMOVE_TOY, toyId })
@@ -53,3 +65,4 @@ export function saveToy(toy) {
             throw err
         })
 }
+

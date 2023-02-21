@@ -5,11 +5,20 @@ const ObjectId = require('mongodb').ObjectId
 
 async function query(filterBy = {}) {
     try {
+
         const criteria = {
-            // vendor: { $regex: filterBy.txt, $options: 'i' }
+            name: { $regex: filterBy.search, $options: 'i' },
+            price: { $gte: +filterBy.minPrice, $lte: +filterBy.maxPrice },
+        }
+        if (filterBy.labels !== 'All') {
+            criteria.labels = { $eq: filterBy.labels }
+        }
+        if (filterBy.inStock === 'true') {
+            criteria.inStock = { $eq: true }
         }
         const collection = await dbService.getCollection('toy')
         var toys = await collection.find(criteria).toArray()
+        console.log('creteria from query', criteria)
         return toys
     } catch (err) {
         logger.error('cannot find toys', err)

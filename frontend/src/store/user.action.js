@@ -17,7 +17,8 @@ export function login(credentials) {
 export function signup(credentials) {
     return userService.signup(credentials)
         .then(user => {
-            store.dispatch({ type: SET_USER, user })
+            store.dispatch({ type: SET_USER, user: { ...user, username: credentials.username } })
+            console.log('user.action , dispatch SET_USER, user', user)
             return user
         })
         .catch(err => {
@@ -25,6 +26,7 @@ export function signup(credentials) {
             throw err
         })
 }
+
 
 export function logout() {
     return userService.logout()

@@ -10,6 +10,7 @@ import { UserMsg } from "./cmps/user-msg";
 import { ToyDetails } from "./pages/toy-details";
 import { Dashboard } from "./pages/dashboard";
 import { LoginSignup } from './pages/login-signup';
+import { ToyEdit } from './pages/toy-edit';
 
 export function App() {
 
@@ -24,6 +25,8 @@ export function App() {
                                 <Route element={<HomePage />} path="/" />
                                 <Route element={<AboutUs />} path="/about" />
                                 <Route element={<ToyIndex />} path="/toy" />
+                                <Route element={<ToyEdit />} path="/toy/edit" />
+                                <Route element={<ToyEdit />} path="/toy/edit/:toyId" />
                                 <Route element={<ToyDetails />} path="/toy/:toyId" />
                                 <Route element={<Dashboard />} path="/dashboard"/>
                                 <Route element={<LoginSignup/>} path="/login-signup"/>
