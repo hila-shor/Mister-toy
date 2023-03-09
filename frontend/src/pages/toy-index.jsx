@@ -37,30 +37,30 @@ function getLabelsFromToys(toys) {
   return allLabels
 }
 
-  function onLoadToys(filterBy) {
-      loadToys(filterBy)
-          .then(() => {
-              showSuccessMsg('Toys loaded')
-          })
-          .catch(err => {
-              showErrorMsg('Cannot load Toys')
-          })
-  }
+function onLoadToys(filterBy) {
+    loadToys(filterBy)
+        .then(() => {
+            showSuccessMsg('Toys loaded')
+        })
+        .catch(err => {
+            showErrorMsg('Cannot load Toys')
+        })
+}
 
-  function onRemoveToy(toyId){
-    removeToy(toyId)
-    .then(() => {
-        showSuccessMsg('toy removed')
-    })
-    .catch(err => {
-        showErrorMsg('Cannot remove toy')
-    })
-  }
+function onRemoveToy(toyId){
+  removeToy(toyId)
+  .then(() => {
+      showSuccessMsg('toy removed')
+  })
+  .catch(err => {
+      showErrorMsg('Cannot remove toy')
+  })
+}
 
-  function handleChange(ev) {
-    const field = ev.target.name
-    const value = (field === "inStock") ? ev.target.checked : ev.target.value
-    setFilterBy({ ...filterBy, [field]: value })
+function handleChange(ev) {
+  const field = ev.target.name
+  const value = (field === "inStock") ? ev.target.checked : ev.target.value
+  setFilterBy({ ...filterBy, [field]: value })
 }
 
   return(

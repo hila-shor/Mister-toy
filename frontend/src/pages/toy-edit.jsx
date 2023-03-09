@@ -5,13 +5,15 @@ import { Link } from "react-router-dom"
 
 import { toyService } from '../services/toy.service.js'
 import { loadToy, saveToy }from '../store/toy.action'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+
 
 
 
 export function ToyEdit(){
   const [toyToEdit , setToyToEdit] = useState(toyService.getEmptyToy())
-  console.log(toyToEdit)
-
+  // console.log(toyToEdit)
+ 
   const {toyId} = useParams()
   const navigate = useNavigate()
 
@@ -31,23 +33,22 @@ function loadToyFromStore() {
 
 function onSaveToy(ev){ 
   ev.preventDefault()
-  console.log("onSaveToy")
-
-    // split the comma-separated labels string into an array
-  const labels = toyToEdit.labels.split(',').map(label => label.trim())
+  
+  // split the comma-separated labels string into an array and uppercase each element in the array label
+  const labels = toyToEdit.labels.split(',').map(label => label.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()).trim())
 
     // create a new toy object with the updated labels array
   const updatedToy = {...toyToEdit, labels}
 
   // if (!toyToEdit.thumbnail)toyToEdit.thumbnail='assets/img/toy1.jpg'
   saveToy(updatedToy).then((toy)=>{
-        console.log('toy', toy)
-        // showSuccessMsg('Toy saved')
+        // console.log('toy', toy)
+        showSuccessMsg('Toy saved')
         navigate('/toy')
     })
     .catch((err) =>{
       console.log('error', err)
-      // showErrorMsg('Could not save new toy')
+      showErrorMsg('Could not save new toy')
   })
 }
 function handleChange({target}){
@@ -59,8 +60,8 @@ function handleChange({target}){
 }
 
   return (
-    <section className="toy-edit">
-      <header>Toy Edit cmp</header>
+    <section className="toy-edit ">
+      {toyId && <img src={`https://robohash.org/${toyToEdit.name}?set=set1`} alt=""/> }
       <div className="form-container">
               <form onSubmit={onSaveToy}>
 
@@ -82,15 +83,6 @@ function handleChange({target}){
                   value={toyToEdit.price}
                   onChange={handleChange}/>
 
-                {/* <label className="flex" htmlFor="title">Label</label>
-                <input type="text"
-                  name="labels"
-                  id="labels"
-                  placeholder="Enter label..."
-                  value={toyToEdit.title}
-                  onChange={handleChange}
-                  required/> */}
-
                 <label className="flex" htmlFor="labels">Labels (comma-separated):</label>
                 <textarea
                   name="labels"
@@ -100,7 +92,7 @@ function handleChange({target}){
                   onChange={handleChange}/>
 
                 <div>
-                    <button>{toyToEdit.id ? 'Save' : 'Add'}</button>
+                    <button>{toyId ? 'Save' : 'Add'}</button>
                     <Link to="/toy">Cancel</Link>
                 </div> 
 

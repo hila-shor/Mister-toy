@@ -28,6 +28,7 @@ function save(toy) {
         return httpService.put(BASE_URL + toy._id, toy)
     } else {
         return httpService.post(BASE_URL, toy)
+
     }
 }
 
@@ -37,7 +38,8 @@ function getDefaultFilter() {
         maxPrice: Infinity,
         minPrice: -Infinity,
         labels: 'All',
-        inStock: null
+        inStock: null,
+        sortBy: 'All',
     }
 }
 function getEmptyToy() {
@@ -47,7 +49,6 @@ function getEmptyToy() {
         labels: [],
         createdAt: 0,
         inStock: true,
-        type: '',
     }
 }
 

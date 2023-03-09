@@ -10,10 +10,12 @@ export function ToyList({toys, onRemoveToy}){
       {toys.map(toy=>
         <li className="toy-li " 
             key={toy._id}>
+          <Link className="edit-btn" to={`/toy/edit/${toy._id}`}>Edit toy</Link>
           <ToyPreview toy={toy}/>
             <div className=" btn-wrapper flex">
               <div className="remove-toy-btn" onClick={()=>{onRemoveToy(toy._id)}}>x</div>
               <Link to={`/toy/${toy._id}`}>Select toy</Link>
+              
             </div>
         </li>)}
     </ul> 

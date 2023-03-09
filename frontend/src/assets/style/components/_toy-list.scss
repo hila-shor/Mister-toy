@@ -7,7 +7,7 @@
   // padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(1fr, 5fr));
-  grid-auto-rows: 300px;
+  grid-auto-rows: 320px;
   gap: 1rem;
   list-style-type: none;
   padding: 0;
@@ -27,11 +27,18 @@
       margin-inline: 6px;
       border: 1px solid $clr1;
       border-radius: 8px;
+
     }
 
     .btn-wrapper{
       justify-content: center;
     }
+
+    .edit-btn{
+      background-color: $clr03;
+      border: none;
+
+      }
 
   }
 

@@ -36,6 +36,22 @@ export function ToyFilter({ handleChange, filterBy, labels }) {
                     className="check-box"
                 />
             </label>
+
+
+            <label className='filter-label'>
+                <span className='filter-label'>Sort By</span>
+                <select
+                    onChange={handleChange}
+                    name="sortBy"
+                    value={filterBy.sortBy}>
+                    <option value="All">Choose</option>
+                    <option value="name">Name</option>
+                    <option value="created">New</option>
+                    <option value="price">Price</option>
+                </select>
+            </label>
+
+
             <label className='filter-label'>
                 <span className='filter-label'>Min-price</span>
                 <input

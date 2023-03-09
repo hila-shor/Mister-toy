@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 
 export const store = createStore(rootReducer, middleware)
 
-// For debug
+//For debug
 // store.subscribe(() => {
 //   console.log('**** Store state changed: ****')
 //   console.log('storeState:\n', store.getState())

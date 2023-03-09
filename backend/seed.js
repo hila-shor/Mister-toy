@@ -14,7 +14,6 @@ async function seedDB() {
         labels: ["Doll", "Battery Powered", "Baby"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Doll',
       },
       {
         name: "Kinetic Sand",
@@ -22,7 +21,6 @@ async function seedDB() {
         labels: ["Sensory toy", "Kids"],
         createdAt: 1631031801811,
         inStock: false,
-        type: 'Baby',
       },
       {
         name: "Spring Toy",
@@ -30,7 +28,6 @@ async function seedDB() {
         labels: ["Metal", "Party", "Kids"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Doll',
       },
       {
         name: "Marvel Spidey",
@@ -38,7 +35,6 @@ async function seedDB() {
         labels: ["Kids", "Battery Powered"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Motor-skills',
       },
       {
         name: "Toss Ball",
@@ -46,14 +42,12 @@ async function seedDB() {
         labels: ["Ball", "Kids", "Beach Toys"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Motor-skills',
       },
       {
         name: "Toy Story",
         price: 13,
         labels: ["Puzzle", "Kids"],
         createdAt: 1634331801011,
-        type: 'Motor-skills',
         inStock: false,
       },
       {
@@ -62,7 +56,6 @@ async function seedDB() {
         labels: ["Doll", "Battery Powered", "Baby"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Doll',
       },
       {
         name: "Nerf N-Strike",
@@ -70,7 +63,6 @@ async function seedDB() {
         labels: ["Sensory toy", "Kids"],
         createdAt: 1631031801811,
         inStock: false,
-        type: 'Baby',
       },
       {
         name: "Fisher-Price",
@@ -78,7 +70,6 @@ async function seedDB() {
         labels: ["Metal", "Party", "Kids"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Doll',
       },
       {
         name: "Monopoly",
@@ -86,7 +77,6 @@ async function seedDB() {
         labels: ["Kids", "Battery Powered"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Motor-skills',
       },
       {
         name: "Play-Doh",
@@ -94,14 +84,12 @@ async function seedDB() {
         labels: ["Ball", "Kids", "Beach Toys"],
         createdAt: 1631031801011,
         inStock: true,
-        type: 'Motor-skills',
       },
       {
         name: "Melissa",
         price: 13,
         labels: ["Puzzle", "Kids"],
         createdAt: 1634331801011,
-        type: 'Motor-skills',
         inStock: false,
       },
     ])

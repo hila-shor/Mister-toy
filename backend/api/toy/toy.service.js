@@ -16,9 +16,19 @@ async function query(filterBy = {}) {
         if (filterBy.inStock === 'true') {
             criteria.inStock = { $eq: true }
         }
+
         const collection = await dbService.getCollection('toy')
         var toys = await collection.find(criteria).toArray()
-        console.log('creteria from query', criteria)
+
+        if (filterBy.sortBy === 'price') {
+            toys.sort((a, b) => a.price - b.price)
+        } else if (filterBy.sortBy === 'name') {
+            toys.sort((a, b) => a.name.localeCompare(b.name))
+        } else if (filterBy.sortBy === 'new') {
+            toys.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        }
+
+        // console.log('creteria from query', criteria)
         return toys
     } catch (err) {
         logger.error('cannot find toys', err)
