@@ -1,6 +1,8 @@
 import {  useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 
 
 import {toyService } from "../services/toy.service.js"
@@ -63,6 +65,7 @@ if (!toy) return <div>Loading...</div>
               <h4>Type: <span>{toy.labels}</span></h4>
             <h4>Created at: <span>{utilService.timestampToDate (toy.createdAt)}</span></h4>
             <h4>In Stock: <span>{(toy.inStock) ? 'yes' : 'no'}</span></h4>
+            <Link to="/toy">Back</Link>
     </section>
   )
 
